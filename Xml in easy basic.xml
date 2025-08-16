@@ -1,0 +1,23 @@
+//main tag
+<?xml version="1.0" encoding="UTF-8"?>   
+
+//one root tag
+<result> 
+
+//no predefined tag
+<student1 id="1"> 
+
+<name>Tanzeela<name>
+
+</student1>
+
+//case sensitive
+<student2 id="2"> 
+
+
+//id is attribute
+<name>Fatima<name>
+
+</student2>
+
+</result>
