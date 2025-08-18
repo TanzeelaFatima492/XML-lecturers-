@@ -1,0 +1,32 @@
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello XML!" />
+
+// layout_width / layout_height are required for every view.
+
+// wrap_content → size = just enough to fit content.
+
+// match_parent → take the full available space.
+
+
+
+//Linear layout
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Click Me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
