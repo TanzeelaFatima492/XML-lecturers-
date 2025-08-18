@@ -1,0 +1,40 @@
+//TextView → displays text
+
+<TextView
+    android:id="@+id/tvName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello, Tanzeela!"
+    android:textSize="20sp" />
+
+//EditText → input field for users
+
+<EditText
+    android:id="@+id/etUsername"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Username" />
+
+//Button → clickable action
+
+<Button
+    android:id="@+id/btnLogin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Login" />
+
+//ImageView → display images
+
+<ImageView
+    android:id="@+id/imgProfile"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/profile_pic" />
+
+//CheckBox / RadioButton / Switch → user choices
+
+<CheckBox
+    android:id="@+id/cbRemember"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Remember me" />
