@@ -1,0 +1,21 @@
+// Shape Drawable → make rectangles, ovals, gradients, strokes.
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#6200EE"/>
+    <corners android:radius="12dp"/>
+    <stroke android:width="2dp" android:color="#3700B3"/>
+</shape>
+
+//Selector → change look based on state (pressed, focused, disabled).
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@color/purple_700"/>
+    <item android:drawable="@color/purple_500"/>
+</selector>
+
+//Ripple → built-in ripple effect on click.
+
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+    <item android:drawable="@color/purple_500"/>
+</ripple>
