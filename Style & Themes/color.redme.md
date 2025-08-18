@@ -3,8 +3,8 @@
 ## (colors.xml)
 
 `<resources>
-    <color name="primaryColor">#6200EE</color>
-    <color name="secondaryColor">#03DAC5</color>
+<color name="primaryColor">#6200EE</color>
+<color name="secondaryColor">#03DAC5</color>
 </resources>`
 
 
