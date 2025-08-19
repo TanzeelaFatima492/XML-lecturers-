@@ -1,0 +1,50 @@
+// 📌 Menu XML Examples
+
+// Options Menu (res/menu/menu_main.xml)
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="never"/>
+</menu>
+
+
+// Kotlin (inflate in Activity):
+
+override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.menu_main, menu)
+    return true
+}
+
+
+// Context Menu
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/copy" android:title="Copy"/>
+    <item android:id="@+id/delete" android:title="Delete"/>
+</menu>
+
+
+// Kotlin (register + handle):
+
+override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
+    menuInflater.inflate(R.menu.context_menu, menu)
+}
+
+
+// Popup Menu
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/sort_name" android:title="Sort by Name"/>
+    <item android:id="@+id/sort_date" android:title="Sort by Date"/>
+</menu>
+
+
+// Kotlin (trigger on button click):
+
+val popup = PopupMenu(this, button)
+popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
+popup.show()
+

@@ -1,0 +1,79 @@
+// Animation XML Examples
+
+// Tween Animation (fade in) → res/anim/fade_in.xml
+
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:fromAlpha="0.0"
+    android:toAlpha="1.0"/>
+
+
+//Kotlin:
+
+val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+imageView.startAnimation(animation)
+
+// Drawable Animation (frame-by-frame) → res/drawable/anim_list.xml
+
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+    <item android:drawable="@drawable/frame1" android:duration="200"/>
+    <item android:drawable="@drawable/frame2" android:duration="200"/>
+</animation-list>
+
+
+// Kotlin:
+
+imageView.setBackgroundResource(R.drawable.anim_list)
+val animation = imageView.background as AnimationDrawable
+animation.start()
+
+// Layout with MotionLayout (activity_main.xml)
+
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/scene_motion">
+
+    <ImageView
+        android:id="@+id/ball"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ball"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
+
+// MotionScene (res/xml/scene_motion.xml)
+
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Define start and end states -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/ball"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/ball"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </ConstraintSet>
+
+    <!-- Transition between them -->
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end"
+        app:duration="2000"/>
+</MotionScene>
+
+
+// Triggering in Kotlin
+
+motionLayout.transitionToEnd()   // animate to end
+motionLayout.transitionToStart() // animate back

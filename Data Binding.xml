@@ -1,0 +1,19 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="com.example.User"/>
+    </data>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.name}"/>
+</layout>
+
+
+
+// in Kotlin
+
+val binding = ActivityMainBinding.inflate(layoutInflater)
+setContentView(binding.root)
+binding.user = User("Ed")
